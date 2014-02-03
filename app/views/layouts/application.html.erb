@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>PersonalManagement</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>PersonalManagement</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%
+      #TODO: add logins
+      user_logged_in = true
+    %>
+  
+    <% if user_logged_in %>
+      <%= render partial: 'layouts/header' %>
+    <% end %>
 
-<%= yield %>
-
-</body>
+    <%= yield %>
+  
+  </body>
 </html>
